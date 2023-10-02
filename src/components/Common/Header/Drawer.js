@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import NightlightIcon from "@mui/icons-material/Nightlight";
 import "./styles.css";
-import { Switch } from "@mui/material";
 
 export default function MobileDrawer() {
   const [open, setOpen] = useState(false);
@@ -60,12 +61,19 @@ export default function MobileDrawer() {
           <a href="/dashboard">
             <p className="link">Dashboard</p>
           </a>
-          <Switch
-            checked={!mode}
-            onClick={(e) => {
-              toggleTheme();
-            }}
-          />
+          <span onClick={() => toggleTheme()}>
+            {mode ? (
+              <span className="mode-container link">
+                <label>Light</label>
+                <LightModeIcon />
+              </span>
+            ) : (
+              <span className="mode-container link">
+                <label>Dark</label>
+                <NightlightIcon />
+              </span>
+            )}
+          </span>
         </div>
       </Drawer>
     </div>

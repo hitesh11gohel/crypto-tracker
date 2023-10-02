@@ -21,7 +21,7 @@
 }
 
 .link {
-  color: var(--grey);
+  color: var(--grey) !important;
   text-decoration: none !important;
   font-weight: 600;
   font-size: 0.8rem;
