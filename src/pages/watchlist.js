@@ -5,32 +5,27 @@ import Footer from "../components/Common/Footer/footer";
 import Header from "../components/Common/Header";
 import Tabs from "../components/Dashboard/Tabs/tabs";
 import { DASHBOARD_API_URL } from "../constants";
+import { Link } from "react-router-dom";
 
 function WatchListPage() {
+  const [coins, setCoins] = useState([]);
   const watchlist = localStorage.getItem("watchlist")
     ? localStorage.getItem("watchlist").split(",")
     : [];
-
-  const [coins, setCoins] = useState([]);
-
-  useEffect(() => {
-    console.log("watchlist was changed");
-  }, [watchlist]);
 
   useEffect(() => {
     axios
       .get(DASHBOARD_API_URL)
       .then((response) => {
-        console.log("Response Data >>>", response.data);
         var myCoins = response.data.filter((coins) =>
           watchlist.includes(coins.id)
         );
-        console.log("my coins", myCoins);
         setCoins(myCoins);
       })
       .catch((error) => {
         console.log("Error>>>", error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -55,9 +50,9 @@ function WatchListPage() {
                 alignItems: "center",
               }}
             >
-              <a href="/dashboard">
+              <Link to="/dashboard">
                 <Button text="Dashboard" />
-              </a>
+              </Link>
             </div>
           </div>
         )}

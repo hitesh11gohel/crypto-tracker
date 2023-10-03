@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tooltip } from "@mui/material";
 import Button from "../Button/Button";
 import MobileDrawer from "./Drawer";
@@ -32,21 +33,17 @@ function Header() {
 
   const [mode, setMode] = useState(defaultDark ? true : false);
 
-  const toggleTheme = (e) => {
-    if (!mode) {
-      setDark();
-    } else {
-      setLight();
-    }
+  const toggleTheme = () => {
+    !mode ? setDark() : setLight();
     setMode(!mode);
   };
 
   return (
     <div className="navbar">
       <h1 className="heading">
-        <a href="/">
+        <Link to="/">
           CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
-        </a>
+        </Link>
       </h1>
       <div className="links">
         <Tooltip
@@ -68,18 +65,18 @@ function Header() {
             )}
           </span>
         </Tooltip>
-        <a href="/">
-          <p className="link">Home</p>
-        </a>
-        <a href="/compare">
-          <p className="link">Compare</p>
-        </a>
-        <a href="/watchlist">
-          <p className="link">Watchlist</p>
-        </a>
-        <a href="/dashboard">
+        <Link to="/" className="link">
+          Home
+        </Link>
+        <Link to="/compare" className="link">
+          Compare
+        </Link>
+        <Link to="/watchlist" className="link">
+          Watchlist
+        </Link>
+        <Link to="/dashboard" className="link">
           <Button text="dashboard" />
-        </a>
+        </Link>
       </div>
       <MobileDrawer />
     </div>

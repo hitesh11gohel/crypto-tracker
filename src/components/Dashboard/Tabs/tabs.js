@@ -61,9 +61,11 @@ export default function Tabs({ data }) {
           </TabPanel>
           <TabPanel value={"list"}>
             <table className="list-flex">
-              {data.map((item, i) => (
-                <List coin={item} key={i} delay={(i % 7) * 0.1} />
-              ))}
+              <tbody>
+                {data.map((item, i) => (
+                  <List coin={item} key={i} delay={(i % 7) * 0.1} />
+                ))}
+              </tbody>
             </table>
           </TabPanel>
         </TabContext>

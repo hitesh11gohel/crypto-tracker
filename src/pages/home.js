@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "../components/Common/Footer/footer";
 import Header from "../components/Common/Header";
 import LandingIntro from "../components/LandingPage/Intro";

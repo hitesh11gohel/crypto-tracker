@@ -1,11 +1,12 @@
-import "./App.css";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import DashboardPage from "./pages/dashboard";
 import CoinPage from "./pages/coin";
 import ComparePage from "./pages/compare";
 import WatchListPage from "./pages/watchlist";
-import { useEffect } from "react";
+import "./App.css";
 
 function App() {
   var cursor;

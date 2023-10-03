@@ -4,6 +4,8 @@ import "./styles.css";
 import { motion } from "framer-motion";
 import PhoneComponent from "./PhoneComponent";
 import { RWebShare } from "react-web-share";
+import { Link } from "react-router-dom";
+
 function LandingIntro() {
   return (
     <div className={"wrapper"}>
@@ -39,9 +41,9 @@ function LandingIntro() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.75 }}
         >
-          <a href="/dashboard">
+          <Link to="/dashboard">
             <Button text="Dashboard" />
-          </a>
+          </Link>
 
           <RWebShare
             data={{

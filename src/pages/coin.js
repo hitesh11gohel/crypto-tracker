@@ -1,4 +1,4 @@
-import axios from "axios";
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LineChart from "../components/Coin/Chart";
@@ -41,13 +41,13 @@ function CoinPage() {
     scales: {
       y: {
         ticks:
-          priceType == "market_caps"
+          priceType === "market_caps"
             ? {
                 callback: function (value) {
                   return "$" + convertNumbers(value);
                 },
               }
-            : priceType == "total_volumes"
+            : priceType === "total_volumes"
             ? {
                 callback: function (value) {
                   return convertNumbers(value);

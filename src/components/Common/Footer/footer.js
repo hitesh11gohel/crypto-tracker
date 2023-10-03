@@ -1,28 +1,28 @@
 import React from "react";
-import "./styles.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import SendIcon from "@mui/icons-material/Send";
 import { RWebShare } from "react-web-share";
+import { Link } from "react-router-dom";
+import "./styles.css";
 
 function Footer() {
   return (
     <div className="footer">
-      <a href="/" style={{ marginLeft: "1rem" }}>
+      <Link to="/" style={{ marginLeft: "1rem" }}>
         <h2>CryptoTracker</h2>
-      </a>
-
+      </Link>
       <div className="socials-flex">
-        <a href="/">
+        <Link to="/">
           <FacebookIcon className="socials-icon" />
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/">
           <InstagramIcon className="socials-icon" />
-        </a>
-        <a href="mailto:avivashishta@gmail.com">
+        </Link>
+        <Link to="mailto:avivashishta@gmail.com">
           <EmailIcon className="socials-icon" />
-        </a>
+        </Link>
         <RWebShare
           data={{
             text: "Crypto Dashboard made using React JS in 2022",

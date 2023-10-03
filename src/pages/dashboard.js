@@ -1,9 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
 import Search from "../components/Dashboard/Search/search";
 import Tabs from "../components/Dashboard/Tabs/tabs";
-import { DASHBOARD_API_URL } from "../constants";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Loading from "../components/Common/Loading/loading";
 import PaginationComponent from "../components/Dashboard/PaginationComponent/pagination";
@@ -24,6 +22,7 @@ function DashboardPage() {
     ) {
       return item;
     }
+    // return [];
   });
 
   useEffect(() => {

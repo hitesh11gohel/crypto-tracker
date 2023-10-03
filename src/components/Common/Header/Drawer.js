@@ -4,6 +4,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export default function MobileDrawer() {
   const [open, setOpen] = useState(false);
@@ -49,18 +50,27 @@ export default function MobileDrawer() {
       />
       <Drawer anchor={"right"} open={open} onClose={() => setOpen(false)}>
         <div className="drawer">
-          <a href="/">
-            <p className="link">Home</p>
-          </a>
-          <a href="/compare">
-            <p className="link">Compare</p>
-          </a>
-          <a href="/watchlist">
-            <p className="link">Watchlist</p>
-          </a>
-          <a href="/dashboard">
-            <p className="link">Dashboard</p>
-          </a>
+          <p>
+            <Link to="/" className="link">
+              Home
+            </Link>
+          </p>
+          <p>
+            <Link to="/compare" className="link">
+              Compare
+            </Link>
+          </p>
+          <p>
+            <Link to="/watchlist" className="link">
+              Watchlist
+            </Link>
+          </p>
+          <p>
+            <Link to="/dashboard" className="link">
+              Dashboard
+            </Link>
+          </p>
+
           <span onClick={() => toggleTheme()}>
             {mode ? (
               <span className="mode-container link">
